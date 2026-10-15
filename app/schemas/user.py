@@ -2,12 +2,12 @@ from pydantic import BaseModel, EmailStr, field_validator
 
 
 class UserCreateRequest(BaseModel):
-    username: str
-    user_code: str
+    username: str | None = None
+    user_code: str = ""
     email: EmailStr
     password: str
-    age: int
-    role: str
+    age: int = 18
+    role: str = "user"
 
     @field_validator("password")
     def validate_password(cls, value: str):

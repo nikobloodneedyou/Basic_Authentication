@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Basic Auth App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="dashboard-body">
+    <nav class="navbar">
+        <div class="nav-brand">🔐 BasicAuth</div>
+        <div class="nav-user">
+            <span class="nav-badge" id="navRole"></span>
+            <span id="navUsername" class="nav-username">Loading...</span>
+            <button id="logoutBtn" class="btn-danger btn-sm">Logout</button>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <!-- Loading skeleton -->
+        <div id="loadingState" class="dashboard-container">
+            <p class="loading-text">⏳ Loading your profile...</p>
+        </div>
+
+        <!-- Profile card (hidden until data loads) -->
+        <div id="profileCard" class="dashboard-container hidden">
+            <div class="avatar" id="avatarInitial"></div>
+            <h1 id="welcomeMsg">Welcome!</h1>
+            <p class="auth-subtitle" id="userEmail"></p>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Username</span>
+                    <span class="info-value" id="infoUsername">—</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Email</span>
+                    <span class="info-value" id="infoEmail">—</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Role</span>
+                    <span class="info-value" id="infoRole">—</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Age</span>
+                    <span class="info-value" id="infoAge">—</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Basic Auth App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-logo">✨</div>
+        <h2>Create Account</h2>
+        <p class="auth-subtitle">Join us today — it's free</p>
+
+        <div id="errorMsg" class="alert alert-error hidden"></div>
+        <div id="successMsg" class="alert alert-success hidden"></div>
+
+        <form id="registerForm" novalidate>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="johndoe" autocomplete="username">
+                <span class="input-hint">Optional — defaults to your email prefix</span>
+            </div>
+            <div class="input-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password <span class="required">*</span></label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" placeholder="Min. 8 characters" required autocomplete="new-password">
+                    <button type="button" class="toggle-password" onclick="togglePassword('password', this)" aria-label="Toggle password">👁</button>
+                </div>
+                <div class="password-strength" id="strengthBar">
+                    <div class="strength-fill" id="strengthFill"></div>
+                </div>
+                <span class="input-hint" id="strengthLabel"></span>
+            </div>
+            <button type="submit" class="btn" id="submitBtn">
+                <span class="btn-text">Create Account</span>
+                <span class="btn-spinner hidden">⏳</span>
+            </button>
+        </form>
+
+        <p class="switch-text">Already have an account? <a href="/login">Sign in</a></p>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
